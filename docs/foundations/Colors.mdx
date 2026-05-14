@@ -1,0 +1,57 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorPalette, ColorUsageTable } from './components/ColorPalette';
+
+<Meta title="Foundations/Colors" />
+
+# Couleurs
+
+La palette ISF est ancrée dans la nature — teintes océan, ivoires sableux et cuivres chaleureux — reflétant l'engagement de l'organisation pour une ingénierie durable dans des environnements variés. Chaque couleur est déclinée en une gamme de 10 nuances (0–9) pour couvrir tous les besoins : composants, fonds, texte.
+
+---
+
+## Palette
+
+<ColorPalette />
+
+---
+
+## Couleurs virtuelles
+
+Le système inclut deux **tokens de couleur virtuels** qui s'adaptent automatiquement aux modes clair et sombre :
+
+| Token | Mode clair | Mode sombre |
+|---|---|---|
+| `surface` | ivory-sand | midnight |
+| `onSurface` | midnight | ivory-sand |
+
+Ces tokens s'utilisent pour les fonds et textes de premier plan, garantissant le support du mode sombre sans logique conditionnelle.
+
+---
+
+## Guide d'utilisation
+
+<ColorUsageTable />
+
+---
+
+## Référence CSS
+
+Toutes les couleurs sont disponibles en propriétés CSS personnalisées :
+
+```css
+/* Accès par nuance */
+var(--mantine-color-deep-ocean-0)  /* plus claire */
+var(--mantine-color-deep-ocean-9)  /* plus sombre */
+
+/* Variante filled (utilise primaryShade) */
+var(--mantine-color-deep-ocean-filled)
+
+/* Variante light */
+var(--mantine-color-deep-ocean-light)
+var(--mantine-color-deep-ocean-light-color)
+var(--mantine-color-deep-ocean-light-hover)
+```
+
+## Accessibilité
+
+Toutes les associations de couleurs ont été sélectionnées en tenant compte de la conformité WCAG AA. Le thème utilise `autoContrast: true` pour choisir automatiquement du texte blanc ou sombre sur les fonds colorés. Vérifier toujours les ratios de contraste pour les associations non standard.

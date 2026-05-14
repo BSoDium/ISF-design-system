@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { SpacingScale } from './components/SpacingScale';
+
+<Meta title="Foundations/Spacing" />
+
+# Espacement
+
+Une échelle d'espacement en cinq niveaux assure un rythme visuel cohérent dans tous les composants et mises en page. L'esthétique éditoriale privilégie les blancs généreux — le contenu doit respirer.
+
+---
+
+## Échelle
+
+La barre horizontale montre la proportion relative ; la valeur en pixels correspond à la taille réelle du token.
+
+<SpacingScale />
+
+---
+
+## Référence des tokens
+
+| Token | Valeur | px | Usage typique |
+|---|---|---|---|
+| `xs` | 0.5rem | 8px | Rembourrage interne serré, espacement d'icônes |
+| `sm` | 0.75rem | 12px | Rembourrage compact, petits écarts entre éléments liés |
+| `md` | 1rem | 16px | Rembourrage par défaut, espacement standard |
+| `lg` | 1.5rem | 24px | Rembourrage de section, espacement interne des cartes |
+| `xl` | 2.5rem | 40px | Marges de section, grands espacements, séparation de page |
+
+---
+
+## Règles d'usage
+
+- **Utiliser `md` par défaut** pour la plupart des rembourrages et espaces entre éléments.
+- **Utiliser `xl` entre les sections principales** pour créer une séparation visuelle claire.
+- **Utiliser `xs` et `sm` pour les interfaces denses** comme les barres d'outils, tableaux et listes compactes.
+- **Être cohérent** — ne pas mélanger des valeurs en pixels arbitraires avec les tokens d'espacement.
+- **Tous les composants Mantine** acceptent les tokens d'espacement par nom (ex. : `p="md"`, `gap="lg"`).
+
+---
+
+## Référence CSS
+
+```css
+var(--mantine-spacing-xs)  /* 0.5rem  — 8px  */
+var(--mantine-spacing-sm)  /* 0.75rem — 12px */
+var(--mantine-spacing-md)  /* 1rem    — 16px */
+var(--mantine-spacing-lg)  /* 1.5rem  — 24px */
+var(--mantine-spacing-xl)  /* 2.5rem  — 40px */
+```

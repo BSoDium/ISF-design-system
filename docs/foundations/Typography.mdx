@@ -1,0 +1,64 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { TypeRamp, HeadingScale, BodyScale, EditorialSample } from './components/TypeScale';
+
+<Meta title="Foundations/Typography" />
+
+# Typographie
+
+Le système typographique ISF associe **Playfair Display** pour les titres à **Geist** pour le texte courant. Cette combinaison crée une hiérarchie éditoriale qui allie autorité institutionnelle et haute lisibilité à l'écran.
+
+---
+
+## Familles
+
+### Playfair Display — `font-serif`
+
+Utilisée pour tous les titres (h1–h6) et les éléments d'affichage éditorial. Le contraste marqué entre pleins et déliés confère aux titres une présence visuelle forte, proche de l'imprimé de qualité. Token : `var(--font-serif)`.
+
+<TypeRamp font="serif" />
+
+### Geist — `font-sans`
+
+Police de corps principale pour l'interface, la navigation et les paragraphes. Neutre, lisible et optimisée pour l'écran à toutes les tailles. Token : `var(--font-geist-sans)`.
+
+<TypeRamp font="sans" />
+
+### Geist Mono — `font-mono`
+
+Réservée aux extraits de code, données chiffrées, légendes techniques et références CSS. Token : `var(--font-geist-mono)`.
+
+<TypeRamp font="mono" />
+
+---
+
+## Échelle de titres
+
+Six niveaux de titre à poids visuel décroissant. Tous les titres utilisent **Playfair Display**.
+
+<HeadingScale />
+
+---
+
+## Texte courant
+
+Cinq tailles de texte courant en **Geist**. La taille `md` est la valeur par défaut pour les paragraphes.
+
+<BodyScale />
+
+---
+
+## Système éditorial
+
+Un exemple illustrant la hiérarchie typographique dans une mise en page article — le cas d'usage central du contenu ISF.
+
+<EditorialSample />
+
+---
+
+## Règles d'usage
+
+- **Respecter la hiérarchie des titres.** Ne pas sauter de niveaux (ex. : h1 → h3). Les lecteurs d'écran s'appuient sur l'ordre des titres pour la navigation.
+- **Privilégier `md` pour les paragraphes.** Utiliser `sm` pour les légendes et métadonnées, `lg` pour les chapôs.
+- **Réserver `xl`** aux citations extraites ou aux introductions en héros.
+- **Ne pas mélanger serif et sans-serif** au sein d'un même élément visuel. Les titres sont en serif ; tout le reste en sans-serif.
+- **Soigner la hauteur de ligne.** Le texte courant doit maintenir une hauteur de ligne généreuse (1,6–1,8) pour les longs contenus.

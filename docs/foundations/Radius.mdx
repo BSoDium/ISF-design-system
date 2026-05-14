@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { RadiusShowcase, RadiusComparison } from './components/RadiusShowcase';
+
+<Meta title="Foundations/Radius" />
+
+# Arrondis
+
+La direction éditoriale privilégie les **bords nets**. Le rayon par défaut est `sm` (0.25rem) — juste assez pour adoucir les coins sans perdre le caractère imprimé, tranchant. Les valeurs plus grandes sont disponibles pour des cas précis : avatars, badges, pastilles.
+
+---
+
+## Options d'arrondi
+
+<RadiusShowcase />
+
+---
+
+## Vue comparative
+
+Une comparaison horizontale montrant l'effet de chaque valeur sur un élément rectangulaire.
+
+<RadiusComparison />
+
+---
+
+## Référence des tokens
+
+| Token | Valeur | px | Usage typique |
+|---|---|---|---|
+| `xs` | 0.125rem | 2px | Arrondi minimal — champs de saisie, léger adoucissement |
+| `sm` | 0.25rem | 4px | **Par défaut** — boutons, cartes, papiers |
+| `md` | 0.5rem | 8px | Badges, tags, cartes de notification |
+| `lg` | 1rem | 16px | Conteneurs d'images, cartes mises en avant |
+| `xl` | 1.5rem | 24px | Pastilles, avatars de remplacement, conteneurs doux |
+
+---
+
+## Règles d'usage
+
+- **Le défaut du thème est `sm`** (`defaultRadius: 'sm'`). La plupart des composants l'héritent automatiquement.
+- **Surcharger par composant** si besoin : `<Paper radius="md">` ou `<Button radius="xl">`.
+- **Éviter `xl` sur les grands conteneurs** — cela peut sembler involontaire à grande échelle.
+- **Utiliser `0` (aucun arrondi)** pour les éléments intentionnellement nets, comme les séparateurs éditoriaux ou les images pleine largeur.
+
+---
+
+## Référence CSS
+
+```css
+var(--mantine-radius-xs)       /* 0.125rem — 2px  */
+var(--mantine-radius-sm)       /* 0.25rem  — 4px  */
+var(--mantine-radius-md)       /* 0.5rem   — 8px  */
+var(--mantine-radius-lg)       /* 1rem     — 16px */
+var(--mantine-radius-xl)       /* 1.5rem   — 24px */
+var(--mantine-radius-default)  /* sm */
+```

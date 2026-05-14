@@ -1,0 +1,47 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ShadowShowcase } from './components/ShadowShowcase';
+
+<Meta title="Foundations/Shadows" />
+
+# Ombres
+
+Des ombres subtiles et désaturées, teintées de **Midnight** (`#1F2D33`), apportent une profondeur papier qui convient à l'esthétique éditoriale. Cinq niveaux d'élévation permettent un empilement nuancé sans bruit visuel.
+
+---
+
+## Échelle d'ombres
+
+<ShadowShowcase />
+
+---
+
+## Référence des tokens
+
+| Token | Valeur | Usage typique |
+|---|---|---|
+| `xs` | À peine visible | Séparation subtile pour cartes plates, champs de saisie |
+| `sm` | Légère élévation | Élévation par défaut des cartes, menus déroulants |
+| `md` | Élévation moyenne | Éléments flottants, popovers, cartes actives |
+| `lg` | Élévation marquée | Modales, notifications toast |
+| `xl` | Forte élévation | Panneaux superposés, boîtes de dialogue |
+
+---
+
+## Règles d'usage
+
+- **Privilégier les élévations faibles** (`xs`–`sm`) pour la plupart des éléments. Le style éditorial est intentionnellement plat.
+- **Utiliser `md`–`lg`** pour les éléments qui se superposent, comme les modales, popovers et menus.
+- **L'ombre `xl`** est réservée aux superpositions plein écran ou aux dialogues importants.
+- **Les ombres s'adaptent au mode de couleur.** En mode sombre, elles sont moins visibles sur les fonds sombres — c'est intentionnel.
+
+---
+
+## Référence CSS
+
+```css
+var(--mantine-shadow-xs)
+var(--mantine-shadow-sm)
+var(--mantine-shadow-md)
+var(--mantine-shadow-lg)
+var(--mantine-shadow-xl)
+```
