@@ -10,7 +10,7 @@ import '@fontsource/playfair-display/400-italic.css';
 import '@fontsource/playfair-display/600.css';
 import '@fontsource/playfair-display/600-italic.css';
 import '@fontsource/playfair-display/700.css';
-import { isfTheme } from '../theme';
+import { isfTheme, isfCssResolver } from '../theme';
 import '../theme/types';
 
 const preview: Preview = {
@@ -32,7 +32,7 @@ const preview: Preview = {
     docs: {
       container: ({ children, ...props }: any) => (
         <DocsContainer {...props}>
-          <MantineProvider theme={isfTheme}>
+          <MantineProvider theme={isfTheme} cssVariablesResolver={isfCssResolver}>
             {children}
           </MantineProvider>
         </DocsContainer>
@@ -60,7 +60,7 @@ const preview: Preview = {
     (Story, context) => {
       const scheme = (context.globals.scheme || 'light') as 'light' | 'dark';
       return (
-        <MantineProvider theme={isfTheme} forceColorScheme={scheme}>
+        <MantineProvider theme={isfTheme} cssVariablesResolver={isfCssResolver} forceColorScheme={scheme}>
           <Story />
         </MantineProvider>
       );

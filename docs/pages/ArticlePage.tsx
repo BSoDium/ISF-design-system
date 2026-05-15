@@ -88,8 +88,8 @@ export function ArticlePage() {
         </Container>
       </Box>
 
-      {/* Article body — narrow reading column */}
-      <Container size="sm" py="xl">
+      {/* Article body */}
+      <Container size="md" py="xl">
         <Stack gap="xl">
           <DropCapParagraph>
             Depuis plus de trente ans, Ingénieurs sans Frontières France mobilise des compétences techniques au service du développement durable. Dans les régions rurales d'Afrique de l'Ouest, l'accès à l'eau potable reste un défi majeur pour des millions de personnes. Nos équipes de bénévoles, composées d'étudiants et de professionnels de l'ingénierie, travaillent main dans la main avec les communautés locales pour concevoir et mettre en œuvre des solutions adaptées, durables et respectueuses de l'environnement.

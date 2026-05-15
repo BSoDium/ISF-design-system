@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import { ColorPalette, ColorUsageTable } from './components/ColorPalette';
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import { ColorUsageTable } from './components/ColorPalette';
 
 <Meta title="Foundations/Colors" />
 
@@ -11,7 +11,24 @@ La palette ISF est ancrée dans la nature — teintes océan, ivoires sableux et
 
 ## Palette
 
-<ColorPalette />
+<ColorPalette>
+  <ColorItem title="Deep Ocean"  subtitle="Couleur principale · #47a0b2"
+    colors={{ '0':'#eff9fb','1':'#e0f0f3','2':'#bbe0e7','3':'#93d0db','4':'#75c2d1','5':'#62bacb','6':'#56b6c9','7':'#47a0b2','8':'#398e9f','9':'#154c56' }} />
+  <ColorItem title="Forest"      subtitle="Accents naturels · #459947"
+    colors={{ '0':'#f0faf0','1':'#dff3df','2':'#bde4be','3':'#98d49a','4':'#78c77a','5':'#62bc64','6':'#55b558','7':'#459947','8':'#38883a','9':'#205c22' }} />
+  <ColorItem title="Ivory Sand"  subtitle="Fond clair · #fcebd5"
+    colors={{ '0':'#fff4e5','1':'#fcebd5','2':'#fbd6a4','3':'#fbbf6e','4':'#fbab43','5':'#fb9f2b','6':'#fc9920','7':'#e08416','8':'#c8750e','9':'#ad6400' }} />
+  <ColorItem title="Golden Dune" subtitle="Accents chauds · #af7934"
+    colors={{ '0':'#fff5e6','1':'#f6e9d7','2':'#e9d1b1','3':'#d9b382','4':'#cfa166','5':'#c9934f','6':'#c68c42','7':'#af7934','8':'#9c6b2b','9':'#885b1f' }} />
+  <ColorItem title="Copper"      subtitle="Appel à l'action · #e16a29"
+    colors={{ '0':'#fff1e8','1':'#fae2d5','2':'#f2c3a9','3':'#eba179','4':'#e58551','5':'#e27337','6':'#e16a29','7':'#c8591d','8':'#b95118','9':'#9c410e' }} />
+  <ColorItem title="Midnight"    subtitle="Texte & fonds sombres · #1f2d33"
+    colors={{ '0':'#f2f6f7','1':'#e7e8e9','2':'#cad0d3','3':'#aab7bd','4':'#8fa2ab','5':'#7d95a0','6':'#728e9b','7':'#607b87','8':'#536e79','9':'#1f2d33' }} />
+  <ColorItem title="Sky Mist"    subtitle="Éléments atténués · #507a92"
+    colors={{ '0':'#e8f7ff','1':'#ddeaf1','2':'#bed1dc','3':'#9cb7c7','4':'#80a1b5','5':'#6d93aa','6':'#628da6','7':'#507a92','8':'#436c84','9':'#315e76' }} />
+  <ColorItem title="Stone"       subtitle="Neutres chauds · #968979"
+    colors={{ '0':'#f8f6f3','1':'#ede9e3','2':'#d8d0c5','3':'#c1b6a8','4':'#aca08f','5':'#9d9080','6':'#968979','7':'#807264','8':'#726457','9':'#5e5144' }} />
+</ColorPalette>
 
 ---
 

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Playfair_Display } from 'next/font/google';
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
-import { isfTheme } from '@/theme';
+import { isfTheme, isfCssResolver } from '@/theme';
 import '@/theme/types';
 import './globals.css';
 
@@ -42,7 +42,7 @@ export default function RootLayout({
         <ColorSchemeScript defaultColorScheme="auto" />
       </head>
       <body>
-        <MantineProvider theme={isfTheme} defaultColorScheme="auto">
+        <MantineProvider theme={isfTheme} cssVariablesResolver={isfCssResolver} defaultColorScheme="auto">
           {children}
         </MantineProvider>
       </body>

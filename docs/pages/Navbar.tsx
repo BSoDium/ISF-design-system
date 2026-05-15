@@ -13,7 +13,22 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useMantineColorScheme } from '@mantine/core';
-import { Sun01Icon, Moon02Icon, GlobeIcon } from 'hugeicons-react';
+import { Sun01Icon, Moon02Icon } from 'hugeicons-react';
+
+function ISFLogoMark({ size = 22, color = 'currentColor', strokeWidth = 1.5 }: {
+  size?: number; color?: string; strokeWidth?: number;
+}) {
+  const cx = size / 2, cy = size / 2, r = size * 0.42;
+  const points = Array.from({ length: 6 }, (_, i) => {
+    const a = (Math.PI / 3) * i - Math.PI / 6;
+    return `${cx + r * Math.cos(a)},${cy + r * Math.sin(a)}`;
+  }).join(' ');
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none">
+      <polygon points={points} stroke={color} strokeWidth={strokeWidth} strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 const links = [
   { label: 'Accueil', href: '#' },
@@ -50,7 +65,7 @@ export function Navbar({ drawerOpened: initialDrawerOpened = false }: NavbarProp
         <Group h={64} justify="space-between">
           {/* Logo */}
           <Group gap="xs" align="center">
-            <GlobeIcon size={22} color="var(--mantine-color-deep-ocean-7)" strokeWidth={1.5} />
+            <ISFLogoMark size={22} color="var(--mantine-color-deep-ocean-7)" strokeWidth={1.5} />
             <Text
               fw={700}
               size="sm"
@@ -100,7 +115,7 @@ export function Navbar({ drawerOpened: initialDrawerOpened = false }: NavbarProp
         </Group>
       </Container>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — no hiddenFrom so the story can open it at any viewport */}
       <Drawer
         opened={opened}
         onClose={close}
@@ -108,11 +123,10 @@ export function Navbar({ drawerOpened: initialDrawerOpened = false }: NavbarProp
         padding="md"
         title={
           <Group gap="xs" align="center">
-            <GlobeIcon size={22} color="var(--mantine-color-deep-ocean-7)" strokeWidth={1.5} />
+            <ISFLogoMark size={22} color="var(--mantine-color-deep-ocean-7)" strokeWidth={1.5} />
             <Text fw={700} size="sm" c="midnight" ff="var(--font-geist-sans)">ISF</Text>
           </Group>
         }
-        hiddenFrom="sm"
         zIndex={1000}
       >
         <Stack gap="md" mt="md">

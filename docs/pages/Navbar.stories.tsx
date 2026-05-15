@@ -18,7 +18,4 @@ export const WithDrawerOpen: Story = {
   args: {
     drawerOpened: true,
   },
-  parameters: {
-    viewport: { defaultViewport: 'mobile1' },
-  },
 };
