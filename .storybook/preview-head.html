@@ -4,4 +4,11 @@
     --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     --font-serif: 'Playfair Display', Georgia, serif;
   }
+
+  /* Remove Storybook docs default h2 underline */
+  h2 { border-bottom: none !important; }
+
+  /* Storybook docs CSS (.sbdocs h1 etc, specificity 0-1-1) beats Mantine's .mantine-Title-root (0-1-0).
+     Force the heading font so HeadingScale renders in Playfair Display. */
+  .mantine-Title-root { font-family: 'Playfair Display', Georgia, serif !important; }
 </style>

@@ -30,13 +30,21 @@ const preview: Preview = {
     backgrounds: { disable: true },
 
     docs: {
-      container: ({ children, ...props }: any) => (
-        <DocsContainer {...props}>
-          <MantineProvider theme={isfTheme} cssVariablesResolver={isfCssResolver}>
-            {children}
-          </MantineProvider>
-        </DocsContainer>
-      ),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      container: ({ children, context, ...props }: any) => {
+        const scheme = (context?.globals?.scheme || 'auto') as 'auto' | 'light' | 'dark';
+        return (
+          <DocsContainer context={context} {...props}>
+            <MantineProvider
+              theme={isfTheme}
+              cssVariablesResolver={isfCssResolver}
+              {...(scheme !== 'auto' ? { forceColorScheme: scheme } : {})}
+            >
+              {children}
+            </MantineProvider>
+          </DocsContainer>
+        );
+      },
     },
   },
 
@@ -44,12 +52,13 @@ const preview: Preview = {
     scheme: {
       name: 'Color Scheme',
       description: 'Mantine color scheme',
-      defaultValue: 'light',
+      defaultValue: 'auto',
       toolbar: {
         icon: 'mirror',
         items: [
+          { value: 'auto',  title: 'Auto (système)' },
           { value: 'light', title: 'Light' },
-          { value: 'dark', title: 'Dark' },
+          { value: 'dark',  title: 'Dark' },
         ],
         dynamicTitle: true,
       },
@@ -58,9 +67,13 @@ const preview: Preview = {
 
   decorators: [
     (Story, context) => {
-      const scheme = (context.globals.scheme || 'light') as 'light' | 'dark';
+      const scheme = (context.globals.scheme || 'auto') as 'auto' | 'light' | 'dark';
       return (
-        <MantineProvider theme={isfTheme} cssVariablesResolver={isfCssResolver} forceColorScheme={scheme}>
+        <MantineProvider
+          theme={isfTheme}
+          cssVariablesResolver={isfCssResolver}
+          {...(scheme !== 'auto' ? { forceColorScheme: scheme } : {})}
+        >
           <Story />
         </MantineProvider>
       );

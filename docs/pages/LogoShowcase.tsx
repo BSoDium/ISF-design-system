@@ -1,5 +1,4 @@
 import {
-  Title,
   Text,
   Paper,
   SimpleGrid,
@@ -7,6 +6,7 @@ import {
   Group,
   Box,
   Divider,
+  Title,
 } from '@mantine/core';
 
 function ISFLogoMark({ size = 48, color = 'currentColor', strokeWidth = 1.5 }: {
@@ -24,7 +24,9 @@ function ISFLogoMark({ size = 48, color = 'currentColor', strokeWidth = 1.5 }: {
   );
 }
 
-function LogoMark({ bg, textColor, label, size = 48, strokeWidth = 1.5 }: { bg: string; textColor: string; label: string; size?: number; strokeWidth?: number }) {
+function LogoMark({ bg, textColor, label, size = 64, strokeWidth = 1.5 }: {
+  bg: string; textColor: string; label: string; size?: number; strokeWidth?: number;
+}) {
   return (
     <Stack gap="xs" align="center">
       <Paper
@@ -36,23 +38,20 @@ function LogoMark({ bg, textColor, label, size = 48, strokeWidth = 1.5 }: { bg: 
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          minHeight: 180,
+          minHeight: 230,
           width: '100%',
-          gap: 8,
+          gap: 16,
         }}
       >
         <ISFLogoMark size={size} color={textColor} strokeWidth={strokeWidth} />
-        <Text
-          fw={600}
-          style={{
-            fontSize: '1.25rem',
-            fontFamily: 'var(--font-serif), Georgia, serif',
-            letterSpacing: '0.08em',
-            color: textColor,
-          }}
-        >
-          Ingénieurs sans Frontières
-        </Text>
+        <Stack gap={2} align="center">
+          <Text fw={700} style={{ fontSize: '0.65rem', letterSpacing: '0.18em', color: textColor, textTransform: 'uppercase' }}>
+            ISF
+          </Text>
+          <Text fw={400} style={{ fontSize: '0.7rem', letterSpacing: '0.06em', color: textColor, textTransform: 'uppercase', opacity: 0.8 }}>
+            Ingénieurs sans Frontières
+          </Text>
+        </Stack>
       </Paper>
       <Text size="xs" c="dimmed">{label}</Text>
     </Stack>
@@ -86,20 +85,7 @@ function DoOrDont({ isDo, description }: { isDo: boolean; description: string })
 export function LogoShowcase() {
   return (
     <Box py="xl">
-      <Stack gap="xl">
-        {/* Title */}
-        <div>
-          <Title order={1} mb="xs">
-            Identité visuelle
-          </Title>
-          <Text c="dimmed" size="lg">
-            Guide d&apos;utilisation du logo et de l&apos;identité graphique
-            d&apos;Ingénieurs sans Frontières.
-          </Text>
-        </div>
-
-        <Divider />
-
+      <Stack gap="lg">
         {/* Logo on different backgrounds */}
         <div>
           <Title order={3} mb="md">Le logo</Title>
@@ -140,7 +126,7 @@ export function LogoShowcase() {
               style={{
                 border: '2px dashed var(--mantine-color-deep-ocean-3)',
                 borderRadius: 'var(--mantine-radius-md)',
-                padding: '2.5rem',
+                padding: '3rem',
                 display: 'inline-flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -151,19 +137,19 @@ export function LogoShowcase() {
               <Text
                 size="xs"
                 c="deep-ocean"
-                style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)' }}
+                style={{ position: 'absolute', top: 10, left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap' }}
               >
                 ↕ min
               </Text>
               <Text
                 size="xs"
                 c="deep-ocean"
-                style={{ position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)' }}
+                style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', whiteSpace: 'nowrap' }}
               >
                 ↔ min
               </Text>
               <ISFLogoMark size={36} color="var(--mantine-color-deep-ocean-7)" strokeWidth={1.5} />
-              <Text size="xs" fw={500} c="deep-ocean" style={{ opacity: 0.7 }}>
+              <Text size="xs" fw={500} c="deep-ocean" style={{ opacity: 0.7, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                 Ingénieurs sans Frontières
               </Text>
             </Box>
