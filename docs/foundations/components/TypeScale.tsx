@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Box, Divider, Group, Paper, Stack, Text, Title } from "@mantine/core";
 

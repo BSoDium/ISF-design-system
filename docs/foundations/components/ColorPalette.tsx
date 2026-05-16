@@ -1,5 +1,3 @@
-"use client";
-
 import { Stack, Text } from "@mantine/core";
 
 export function ColorUsageTable() {

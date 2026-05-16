@@ -1,5 +1,3 @@
-'use client';
-
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { AppShell, Text, Paper, Group, Title, Stack, Anchor, Button, ActionIcon } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
